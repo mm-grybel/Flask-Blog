@@ -5,6 +5,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
     SECRET_KEY = os.urandom(32)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
+    ADMIN = os.environ.get('ADMIN') or 'monika@test.com'
 
     @staticmethod
     def init_app(app):
